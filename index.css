@@ -27,17 +27,19 @@ body {
 .header {
   position: relative;
   padding: 200px 0;
-  background: url("/images/header-photo.jpg ");
+  background: url("images/header-photo.jpg ");
   background-size: cover;
   color: #C2BAA3;
   margin-bottom: 10px;
 }
+
 .header__container {
   text-align: center;
   position: relative;
   font-size: 1.3em;
   padding: 0 10px;
 }
+
 .header__cover {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.6);
@@ -46,10 +48,12 @@ body {
   left: 0;
   right: 0;
 }
+
 .header__title {
   font-weight: 900;
   letter-spacing: 7px;
 }
+
 .header__subtitle {
   font-weight: 700;
   line-height: 33px;
@@ -62,6 +66,7 @@ body {
   background-color: #151618;
   text-align: center;
 }
+
 .nav__container {
   display: flex;
   justify-content: space-between;
@@ -69,14 +74,17 @@ body {
   padding: 0 15px;
   align-items: center;
 }
+
 .nav__container-left {
   display: flex;
   justify-content: space-between;
 }
+
 .nav__logo img {
   display: block;
   margin: 0 auto;
 }
+
 .nav__list {
   display: flex;
   height: 100%;
@@ -84,9 +92,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .nav__list li a:hover {
   color: #3098bb;
 }
+
 .nav__link {
   display: block;
   padding: 15px;
@@ -96,10 +106,13 @@ body {
   white-space: nowrap;
   transition: 0.3s;
 }
+
 .nav__btn-close {
   background-color: #5f615b;
 }
-.nav__btn-open, .nav__btn-close {
+
+.nav__btn-open,
+.nav__btn-close {
   display: none;
   align-items: center;
   justify-content: center;
@@ -119,19 +132,23 @@ body {
 .about {
   text-align: center;
 }
+
 .about__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
 }
+
 .about__grid img {
   display: block;
 }
+
 .about__item {
   display: flex;
   align-items: center;
 }
+
 .about__item-header {
   text-align: right;
 }
@@ -141,6 +158,7 @@ body {
     flex-direction: column;
   }
 }
+
 @media only all and (max-width: 942px) {
   .nav__list {
     display: none;
@@ -155,12 +173,15 @@ body {
     display: block;
   }
 }
+
 @media only all and (min-width: 942px) {
+
   .nav__btn-open,
-.nav__btn-close {
+  .nav__btn-close {
     display: none !important;
   }
 }
+
 @media only all and (max-width: 425px) {
   .nav__container-left {
     flex-direction: column;
@@ -171,6 +192,7 @@ body {
     flex-direction: column;
   }
 }
+
 @media (max-width: 340px) {
   .header__cover {
     top: 30%;
