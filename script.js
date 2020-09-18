@@ -18,8 +18,8 @@ closeBtn.addEventListener("click", function (e) {
 
 // ----------- ГАЛЕРЕЯ переключение блоков по кнопкам
 
-let galleries = document.querySelectorAll('.gallery__grid');
-let galleryBtns = document.querySelectorAll('.gallery__btn');
+let galleries = document.querySelectorAll('.gallery-photos__grid');
+let galleryBtns = document.querySelectorAll('.gallery-photos__btn');
 
 galleryBtns.forEach(item => item.addEventListener('click', function (e) {
     if (e.target == galleryBtns[0]) openGalPhoto();
@@ -57,22 +57,26 @@ function openGalPicture() {
 // ------------------------- ГАЛЕРЕЯ уменьшение кол-ва фото при узком экране
 
 let mw425px = window.matchMedia('(max-width: 425px)').matches;
-let galleryGrids = document.querySelectorAll('.gallery__grid');
+let galleryGrids = document.querySelectorAll('.grid');
 let screenWidth = document.documentElement.clientWidth;
+let lastChild = this.length - 1;
 
 
 // ---Из каждого .gallery__grid берем все .grid__item кроме первых двух:
 
 let hideGalleryItems = function () {
-    galleryGrids.forEach(galleryGrid => Array.from(galleryGrid.children).slice(1, 5).forEach(item => item.style.display = 'none'));
+
+    galleryGrids.forEach(galleryGrid => Array.from(galleryGrid.children).slice(1, lastChild).forEach(item => item.style.display = 'none'));
 }
 
 let showGalleryItems = function () {
-    galleryGrids.forEach(galleryGrid => Array.from(galleryGrid.children).slice(1, 5).forEach(item => item.style.display = 'block'));
+
+    galleryGrids.forEach(galleryGrid => Array.from(galleryGrid.children).slice(1, lastChild).forEach(item => item.style.display = 'block'));
 }
 
 let galleryItemHider = function () {
     let screenWidth = document.documentElement.clientWidth;
+
     if (screenWidth <= 425) {
         hideGalleryItems();
     } else showGalleryItems();
