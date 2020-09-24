@@ -360,6 +360,27 @@ a {
     }
 }
 
+.contacts {
+    form {
+        max-width: 570px;
+        margin: 0 auto;
+        color: white;
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+
+        }
+
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+    }
+}
+
 //------------------- MEDIA
 
 //---------- MAX
