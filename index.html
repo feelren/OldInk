@@ -29,24 +29,17 @@
                     </div>
                     <div class="nav__container-right">
                         <ul class="nav__list">
-                            <li><a class="nav__link" href="#">ГЛАВНАЯ</a></li>
-                            <li><a class="nav__link" href="#">ОБО МНЕ</a></li>
-                            <li><a class="nav__link" href="#">ГАЛЕРЕЯ</a></li>
-                            <li><a class="nav__link" href="#">УСЛУГИ</a></li>
-                            <li><a class="nav__link" href="#">ОТЗЫВЫ</a></li>
-                            <li><a class="nav__link" href="#">ЦЕНЫ</a></li>
-                            <li><a class="nav__link" href="#">КОНТАКТЫ</a></li>
+                            <li><a class="nav__link move" href="#about">ОБО МНЕ</a></li>
+                            <li><a class="nav__link move" href="#gallery">ГАЛЕРЕЯ</a></li>
+                            <li><a class="nav__link move" href="#services">УСЛУГИ</a></li>
+                            <li><a class="nav__link move" href="#prices">ЦЕНЫ</a></li>
+                            <li><a class="nav__link move" href="#contacts">КОНТАКТЫ</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
-        <section class="tel-number">
-            <div class="nav-wrapper">
-                <a href="tel:+79773526786"><span class="orange">Тел. +7-977-</span>352-67-86</a>
-            </div>
-        </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="wrapper">
                 <p class="title"><span class="orange">ОБО</span> МНЕ</p>
                 <p class="subtitle"><span class="orange">Я ГОТОВ РАССКАЗАТЬ</span> НЕМНОГО О СЕБЕ , СВОЕМ ТВОРЧЕСТВЕ И О ЛИЧНОСТНОМ РАЗВИТИИ</p>
@@ -86,10 +79,9 @@
                         </div>
                     </div>
                 </article>
-                <img src="images/about/brushes.png" alt="" class="about__picture" />
             </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="wrapper">
                 <article class="gallery-photos">
                     <p class="title"><span class="orange">ГАЛ</span>ЕРЕЯ</p>
@@ -151,7 +143,7 @@
                 </article>
             </div>
         </section>
-        <section class="services">
+        <section class="services" id="services">
             <div class="wrapper">
                 <p class="title"><span class="orange">УСЛ</span>УГИ</p>
                 <p class="subtitle">
@@ -191,17 +183,21 @@
                         <p class="item-text">Могу предложить сделать багетную раму из натурального дерева. Множество дизайнерских видов. Оговаривается отдельно.</p>
                     </div>
                 </div>
-                <p class="title-under">
-                    <span class="orange">ОЧЕНЬ ВАЖНО!</span> Никогда не стремитесь сблизить внешний образ реального человека с историческим прототипом! Пример: человек с пышной кудрявой шевелюрой- это
-                    не значит, что в поиске исторического образа, последний должен быть кучерявым и лохматым. Или: "наш родственник/знакомый никогда не носил бороды".<br /><br />
-                    Стоит немного придерживаться роста и габаритов фигуры. Даже с возрастом можно варьировать. В остальном- воплощение художественного замысла тандема заказчика с исполнителем.<br /><br />
-                    Практика показывает, что не каждый образ сразу "ложится" на портрет заказчика. Чтобы добиться точного слияния современного портрета с историческим, приходится очень много работать.
-                    И только кропотливым трудом достигается результат, который можно назвать "реинкарнацией"! А кто знает? Может таким способом и вправду мы "видим" кем мог быть в далекой прошлой
-                    жизни человек, которому готовится столь уникальный подарок?
-                </p>
+                <div class="title-under">
+                    <p>
+                        <span class="orange">ОЧЕНЬ ВАЖНО!</span> Никогда не стремитесь сблизить внешний образ реального человека с историческим прототипом! Пример: человек с пышной кудрявой шевелюрой-
+                        это не значит, что в поиске исторического образа, последний должен быть кучерявым и лохматым. Или: "наш родственник/знакомый никогда не носил бороды".
+                    </p>
+                    <p>Стоит немного придерживаться роста и габаритов фигуры. Даже с возрастом можно варьировать. В остальном- воплощение художественного замысла тандема заказчика с исполнителем.</p>
+                    <p>
+                        Практика показывает, что не каждый образ сразу "ложится" на портрет заказчика. Чтобы добиться точного слияния современного портрета с историческим, приходится очень много
+                        работать. И только кропотливым трудом достигается результат, который можно назвать "реинкарнацией"! А кто знает? Может таким способом и вправду мы "видим" кем мог быть в
+                        далекой прошлой жизни человек, которому готовится столь уникальный подарок?
+                    </p>
+                </div>
             </div>
         </section>
-        <section class="prices">
+        <section class="prices" id="prices">
             <div class="wrapper">
                 <p class="title"><span class="orange">ЦЕ</span>НЫ</p>
                 <div class="prices__grid">
@@ -290,18 +286,39 @@
             height="400"
             frameborder="0"
         ></iframe>
-        <section class="contacts">
-            <p class="title"><span class="orange">КОНТ</span>АКТЫ</p>
-            <form>
-                <label for="name">Имя:</label><br />
-                <input type="text" id="name" placeholder="Введите Ваше Имя" /><br />
-                <label for="email">Email:</label><br />
-                <input type="text" id="email" placeholder="Введите Ваш Email" /><br />
-                <label for="message">ТЕКСТ СООБЩЕНИЯ:</label><br />
-                <textarea id="message" rows="10"></textarea><br />
-                <input type="submit" />
-            </form>
+        <section class="contacts" id="contacts">
+            <div class="wrapper">
+                <p class="title"><span class="orange">КОНТ</span>АКТЫ</p>
+                <div class="contacts__links">
+                    <p class="title-under">
+                        <a href="tel:+79773526786"><span class="orange">Телефон: </span>+7-977-352-67-86</a>
+                    </p>
+                    <p class="title-under">
+                        <a href="mailto:info@oldink.ru"><span class="orange">E-mail: </span>info@oldink.ru</a>
+                    </p>
+                </div>
+                <form class="contacts__form">
+                    <label for="name">ИМЯ:</label>
+                    <input type="text" id="name" placeholder="Введите Ваше Имя" />
+                    <label for="email">E-MAIL:</label>
+                    <input type="text" id="email" placeholder="Введите Ваш Email" />
+                    <label for="message">ТЕКСТ СООБЩЕНИЯ:</label>
+                    <textarea id="message" rows="10"></textarea>
+                    <input type="submit" />
+                </form>
+            </div>
         </section>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer__icons">
+                    <a target="_blank" href="https://twitter.com/"><img src="images/contacts/twitter.png" alt="" /></a>
+                    <a target="_blank" href="https://www.facebook.com/dir.larsen"><img src="images/contacts/facebook.png" alt="" /></a>
+                    <a target="_blank" href="https://vk.com/id346530762"><img src="images/contacts/vk.png" alt="" /></a>
+                </div>
+                <a href="tel:+79773526786"><span class="orange">Тел. +7-977-</span>352-67-86</a>
+                <p>2016 @ OLD<span class="orange">INK</span>. All rights reserved.</p>
+            </div>
+        </footer>
         <script src="script.js"></script>
     </body>
 </html>

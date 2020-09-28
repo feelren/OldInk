@@ -8,7 +8,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: raleway, sans-serif;
-  padding-bottom: 400px;
+}
+
+section {
+  padding: 130px 0;
 }
 
 .nav-wrapper {
@@ -37,7 +40,7 @@ body {
 }
 
 a {
-  display: block;
+  color: #cecece;
   text-decoration: none;
 }
 
@@ -46,11 +49,11 @@ a {
 }
 
 .lightblue {
-  color: #0BA4D6;
+  color: #0ba4d6;
 }
 
 .title {
-  margin: 0 auto 70px 0;
+  margin: 0 auto 70px auto;
   font-size: 3em;
   color: #ffffff;
   letter-spacing: 2px;
@@ -59,7 +62,7 @@ a {
 }
 
 .subtitle {
-  margin-bottom: 80px;
+  margin: 80px 0;
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 1px;
@@ -69,13 +72,13 @@ a {
 }
 
 .title-under {
+  margin: 30px auto 0 auto;
+  text-indent: 2em;
   font-size: 1.3em;
   max-width: 80%;
   color: #cecece;
   font-family: open-sans, sans-serif;
   font-weight: 400;
-  margin: 0 auto 100px auto;
-  padding: 0 20px;
   line-height: 19px;
 }
 
@@ -116,6 +119,7 @@ a {
   padding: 200px 0;
   background: url("images/header-photo.jpg ");
   background-size: cover;
+  background-attachment: fixed;
   color: #c2baa3;
 }
 .header__container {
@@ -146,7 +150,6 @@ a {
   font-size: 1.3em;
   top: 0px;
   z-index: 1;
-  margin-bottom: 10px;
   background: #151618;
   text-align: center;
 }
@@ -172,38 +175,28 @@ a {
   margin: 0;
   padding: 0;
 }
-.nav__list li a:hover {
-  color: #3098bb;
-}
 .nav__link {
+  display: block;
   padding: 15px;
-  text-decoration: none;
   font-weight: 700;
   color: #dbdbd3;
   white-space: nowrap;
   transition: 0.3s;
+}
+.nav__link:hover {
+  color: #3098bb;
 }
 .nav__btn-open, .nav__btn-close {
   display: none;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  padding: 25px;
-}
-
-.tel-number a {
-  text-align: right;
-  font-family: open-sans, sans-serif;
-  font-weight: 600;
-  line-height: 22px;
-  margin-bottom: 200px;
-  color: #cecece;
+  padding: 7px;
 }
 
 .about {
   text-align: center;
   color: #cecece;
-  margin-bottom: 200px;
 }
 .about__grid {
   display: grid;
@@ -227,6 +220,9 @@ a {
   border-radius: 7px;
 }
 
+.gallery {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1895133053) 30%, rgba(0, 0, 0, 0.1923144258) 70%, rgba(0, 0, 0, 0) 100%);
+}
 .gallery-photos {
   margin-bottom: 150px;
 }
@@ -252,12 +248,13 @@ a {
 }
 
 .services {
-  padding: 40px 0 40px 0;
   background: url("images/services/background.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }
 .services .title-under {
-  margin-bottom: 80px;
+  padding: 20px 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1895133053) 30%, rgba(0, 0, 0, 0.1923144258) 70%, rgba(0, 0, 0, 0) 100%);
 }
 .services__grid {
   display: grid;
@@ -271,67 +268,121 @@ a {
 }
 
 .prices {
-  padding: 40px 0 40px 0;
   background: url("images/prices/background.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }
 .prices__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
-.prices__grid .item {
+.prices .item {
   background-color: #1e2224;
   padding: 20px;
   border-radius: 8px;
 }
-.prices__grid .item__container {
+.prices .item__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.prices__grid .item__container-leftside hr {
+.prices .item__container-leftside hr {
   border: 1px solid #8e8e8e;
 }
-.prices__grid .item__container-rightside {
+.prices .item__container-rightside {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.prices__grid .item__container-rightside img {
+.prices .item__container-rightside img {
   max-width: 100px;
   margin-bottom: 15px;
 }
-.prices__grid .item__container-rightside .bottom p {
+.prices .item__container-rightside .bottom p {
   margin: 0;
   font-size: 1.5em;
   white-space: nowrap;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 700;
 }
 
-.contacts form {
+.contacts .wrapper {
   max-width: 570px;
   margin: 0 auto;
   color: white;
 }
-.contacts form input {
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
+.contacts .title-under {
+  text-indent: 0;
 }
-.contacts form textarea {
+.contacts__links {
+  margin-bottom: 70px;
+}
+.contacts__form {
+  position: relative;
+}
+.contacts__form > label,
+.contacts__form input,
+.contacts__form textarea {
+  border-radius: 3px;
+  display: block;
   box-sizing: border-box;
   width: 100%;
+  border: none;
+  font-family: open-sans, sans-serif;
+}
+.contacts__form label {
+  margin-bottom: 7px;
+  color: #6b6b6b;
+  font-weight: 700;
+}
+.contacts__form input {
+  margin-bottom: 20px;
+  padding: 5px;
+}
+.contacts__form input[type=submit] {
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 700;
+}
+.contacts__form input[type=submit]:hover {
+  background-color: #feb21d;
+}
+.contacts__form textarea {
+  margin-bottom: 20px;
+  padding: 5px;
+  resize: none;
 }
 
-@media only all and (max-width: 1180px) {
-  .nav__container {
-    flex-direction: column;
-  }
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  background-color: #000;
+  font-family: open-sans, sans-serif;
+  color: #cecece;
+  font-weight: 600;
 }
+.footer a {
+  display: block;
+  margin-bottom: 10px;
+}
+.footer__icons {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.footer__icons a {
+  margin: 0 8px;
+}
+.footer__icons img {
+  max-width: 30px;
+}
+.footer p {
+  margin: 0;
+}
+
 @media only all and (max-width: 942px) {
   .nav__list {
     display: none;
@@ -342,8 +393,15 @@ a {
     display: flex;
   }
 
+  .nav__logo {
+    display: none;
+  }
+
   .nav__container {
     display: block;
+  }
+  .nav__container-left {
+    justify-content: flex-end;
   }
 
   .about__picture {
@@ -358,26 +416,6 @@ a {
 @media (max-width: 790px) {
   html {
     font-size: 11px;
-  }
-
-  .about {
-    margin-bottom: 100px;
-  }
-
-  .title {
-    margin: 0 auto 20px 0;
-  }
-
-  .subtitle {
-    margin-bottom: 50px;
-  }
-
-  .title-under {
-    margin: 0 auto 100px auto;
-  }
-
-  .tel-number a {
-    margin-bottom: 100px;
   }
 
   .about__grid {
@@ -407,14 +445,6 @@ a {
   .header__cover {
     top: 30%;
     bottom: 29%;
-  }
-
-  .nav__logo {
-    display: none;
-  }
-
-  .nav__container-left {
-    justify-content: center;
   }
 
   .nav__list {

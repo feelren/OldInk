@@ -1,8 +1,11 @@
+// ---------- НАВИГАЦИЯ смена кнопок "открыть\закрыть" и скрытие меню по нажатию линков
+// -------------------------------------------------------------------------
+
+
 let openBtn = document.querySelector(".nav__btn-open");
 let closeBtn = document.querySelector(".nav__btn-close");
 let navList = document.querySelector(".nav__list");
-let navBtn = document.querySelector(".nav__btn");
-let nav = document.querySelector(".nav");
+let move = document.querySelectorAll(".move");
 
 openBtn.addEventListener("click", function (e) {
     navList.classList.toggle("active-flex");
@@ -16,7 +19,21 @@ closeBtn.addEventListener("click", function (e) {
     openBtn.style.display = "flex";
 });
 
+move.forEach(item => item.addEventListener('click', function () {
+    if (navList.classList.contains('active-flex')) {
+        closeBtn.click();
+    }
+}));
+
+
+
+
+
+
+
+
 // ----------- ГАЛЕРЕЯ переключение блоков по кнопкам
+// -------------------------------------------------------------------------
 
 let galleries = document.querySelectorAll('.gallery-photos__grid');
 let galleryBtns = document.querySelectorAll('.gallery-photos__btn');
@@ -30,6 +47,7 @@ galleryBtns.forEach(item => item.addEventListener('click', function (e) {
 function openGalPhoto() {
     galleries.forEach(item => item.classList.remove('active-grid'));
     galleries[0].classList.add('active-grid');
+
     galleryBtns.forEach(item => item.classList.remove('active-underline'));
     galleryBtns[0].classList.add('active-underline');
 }
@@ -37,6 +55,7 @@ function openGalPhoto() {
 function openGalImage() {
     galleries.forEach(item => item.classList.remove('active-grid'));
     galleries[1].classList.add('active-grid');
+
     galleryBtns.forEach(item => item.classList.remove('active-underline'));
     galleryBtns[1].classList.add('active-underline');
 }
@@ -44,6 +63,7 @@ function openGalImage() {
 function openGalPicture() {
     galleries.forEach(item => item.classList.remove('active-grid'));
     galleries[2].classList.add('active-grid');
+
     galleryBtns.forEach(item => item.classList.remove('active-underline'));
     galleryBtns[2].classList.add('active-underline');
 }
@@ -55,24 +75,39 @@ function openGalPicture() {
 
 
 // ------------------------- ГАЛЕРЕЯ уменьшение кол-ва фото при узком экране
+// -------------------------------------------------------------------------
 
 let mw425px = window.matchMedia('(max-width: 425px)').matches;
 let galleryGrids = document.querySelectorAll('.grid');
 let screenWidth = document.documentElement.clientWidth;
-let lastChild = this.length - 1;
 
 
 // ---Из каждого .gallery__grid берем все .grid__item кроме первых двух:
 
 let hideGalleryItems = function () {
+    galleryGrids.forEach(function (galleryGrid) {
+        let childsArr = Array.from(galleryGrid.children);
 
-    galleryGrids.forEach(galleryGrid => Array.from(galleryGrid.children).slice(1, lastChild).forEach(item => item.style.display = 'none'));
+        childsArr = childsArr.slice(1, (childsArr.length - 1));
+
+        childsArr.forEach(function (img) {
+            img.style.display = 'none';
+        })
+    })
 }
 
 let showGalleryItems = function () {
+    galleryGrids.forEach(function (galleryGrid) {
+        let childsArr = Array.from(galleryGrid.children);
 
-    galleryGrids.forEach(galleryGrid => Array.from(galleryGrid.children).slice(1, lastChild).forEach(item => item.style.display = 'block'));
+        childsArr = childsArr.slice(1, (childsArr.length - 1));
+
+        childsArr.forEach(function (img) {
+            img.style.display = 'block';
+        })
+    })
 }
+
 
 let galleryItemHider = function () {
     let screenWidth = document.documentElement.clientWidth;
@@ -84,26 +119,41 @@ let galleryItemHider = function () {
 
 window.addEventListener('resize', galleryItemHider);
 
-window.addEventListener('DOMContentLoaded', galleryItemHider);
 
 
-// -------- GOOGLE карта
 
-function initMap() {
-    // The location of Uluru
-    var uluru = {
-        lat: -25.344,
-        lng: 131.036
-    };
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-        document.getElementById('map'), {
-            zoom: 4,
-            center: uluru
-        });
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-    });
+
+
+// ---------- Подсказка при работе с формой
+// -------------------------------------------------------------------------
+
+
+let form = document.querySelector('.contacts__form');
+let label = document.querySelector('textarea');
+
+let showNotification = function (e) {
+    let noteExists = document.querySelector('.note');
+
+    if (e.target.tagName == 'LABEL') e.preventDefault();
+    if (!noteExists) {
+        let note = document.createElement('div');
+        let coords = form.getBoundingClientRect();
+
+        note.classList.add('note');
+        note.innerHTML = 'Данная форма пока не работает, она находится в разработке :(';
+
+        note.style.position = 'fixed';
+        note.style.maxWidth = '80%';
+        note.style.borderRadius = '6px';
+        note.style.padding = '10px';
+        note.style.color = 'white';
+        note.style.backgroundColor = 'red';
+
+        form.append(note);
+        note.style.top = coords.top - note.offsetHeight - 10 + 'px';
+
+        setTimeout(() => note.remove(), 4000);
+    }
 }
+
+form.addEventListener('click', showNotification);
