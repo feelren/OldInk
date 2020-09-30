@@ -1,3 +1,5 @@
+// ---------- ОБЩИЕ
+
 html {
     min-width: 320px;
     font-size: 14px;
@@ -115,6 +117,8 @@ a {
     font-weight: 400;
 }
 
+// --------------БЛОКИ
+
 .header {
     position: relative;
     padding: 200px 0;
@@ -130,13 +134,11 @@ a {
 
     &__cover {
         position: absolute;
-        background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.15309873949579833) 0%,
-            rgba(0, 0, 0, 0.6993172268907564) 25%,
-            rgba(0, 0, 0, 0.6993172268907564) 75%,
-            rgba(0, 0, 0, 0.15309873949579833) 100%
-        );
+        background: linear-gradient(90deg,
+                rgba(0, 0, 0, 0.15309873949579833) 0%,
+                rgba(0, 0, 0, 0.6993172268907564) 25%,
+                rgba(0, 0, 0, 0.6993172268907564) 75%,
+                rgba(0, 0, 0, 0.15309873949579833) 100%);
         top: 33%;
         bottom: 32%;
         left: 0;
@@ -241,6 +243,7 @@ a {
 
         img {
             border-radius: 7px;
+            flex-shrink: 0;
         }
     }
 }
@@ -373,7 +376,7 @@ a {
     &__form {
         position: relative;
 
-        & > label,
+        &>label,
         input,
         textarea {
             border-radius: 3px;
@@ -466,6 +469,7 @@ a {
 
     .nav__container {
         display: block;
+
         &-left {
             justify-content: flex-end;
         }
@@ -564,6 +568,7 @@ a {
 //---------- MIN
 
 @media only all and (min-width: 942px) {
+
     .nav__btn-open,
     .nav__btn-close {
         display: none !important;

@@ -218,6 +218,7 @@ a {
 }
 .about__item img {
   border-radius: 7px;
+  flex-shrink: 0;
 }
 
 .gallery {
