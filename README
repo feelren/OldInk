@@ -1,3 +1,5 @@
-    I create this project for my friend`s studio using semantics, BEM, SCSS, GRID, FLEX and JS. There is some kind of site-layout, which i`m looking at: 'https://oldink.ru/'. 
-  The first version of this landing was made in Adobe Muse and didn`t have any adaptivity or optimization. 
-  Code was non-supporting, that`s why i decided to remake it using actual web-developing skills.
+https://oldink.ru/
+Флексы, гриды, БЭМ. Довольно простой сайт.
+
+Сверстал для товарища данный лендинг. Есть самодельная переключалка блоков, построенная на display:none\block. 
+Изначально он был сделан в adobe muse, из-за чего не был адаптивным и хоть как-то поддерживаемым. Я предложил свою помощь и "переверстал".
